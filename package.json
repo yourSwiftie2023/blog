@@ -8,16 +8,20 @@
     "start": "cross-env NODE_ENV=development webpack serve --config config/webpack.dev.js",
     "analyze": "cross-env NODE_ENV=analyze webpack serve --config config/webpack.dev.js --progress",
     "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.js",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx",
+    "prepare": "husky install"
   },
   "keywords": [
     "blog"
   ],
   "license": "ISC",
   "lint-staged": {
-    "*.{js,ts,jsx,tsx}": [
-      "eslint --cache --fix",
-      "git add"
+    "**/*.{js,ts,jsx,tsx}": [
+      "pnpm lint"
+    ],
+    "**/*.{js,jsx,tsx,ts,less,md}": [
+      "prettier --write"
     ]
   },
   "husky": {
