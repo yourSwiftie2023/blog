@@ -2,10 +2,10 @@
  * @Author: ccj
  * @Date: 2023-07-14 09:08:43
  * @LastEditors: ccj
- * @LastEditTime: 2023-07-14 10:26:06
+ * @LastEditTime: 2023-07-14 11:23:57
  * @Description: Layout
  */
-import { useOutlet } from 'react-router'
+import { useOutlet } from 'react-router-dom'
 import Header from './Header'
 
 function Layout() {
