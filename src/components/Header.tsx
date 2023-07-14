@@ -2,38 +2,18 @@
  * @Author: ccj
  * @Date: 2023-07-14 10:27:07
  * @LastEditors: ccj
- * @LastEditTime: 2023-07-14 13:49:37
+ * @LastEditTime: 2023-07-14 16:43:32
  * @Description: Header
  */
-import { CSSProperties } from 'react'
-import { useTime } from '@/hooks'
-
-interface CSSPropertiesWithVars extends CSSProperties {
-  '--value': number
-}
+import { Link } from 'react-router-dom'
 
 function Header() {
-  const [hours, minutes, seconds] = useTime()
-
   return (
-    <div className='grid grid-flow-col gap-5 text-center auto-cols-max'>
-      <div className='flex flex-col p-2 bg-neutral rounded-box text-neutral-content'>
-        <span className='countdown font-mono text-5xl'>
-          <span style={{ '--value': hours } as CSSPropertiesWithVars} />
-        </span>
-        hours
-      </div>
-      <div className='flex flex-col p-2 bg-neutral rounded-box text-neutral-content'>
-        <span className='countdown font-mono text-5xl'>
-          <span style={{ '--value': minutes } as CSSPropertiesWithVars} />
-        </span>
-        min
-      </div>
-      <div className='flex flex-col p-2 bg-neutral rounded-box text-neutral-content'>
-        <span className='countdown font-mono text-5xl'>
-          <span style={{ '--value': seconds } as CSSPropertiesWithVars} />
-        </span>
-        sec
+    <div className='p-6 flex'>
+      <div className='flex-1 text-right'>
+        <Link to='/aaa'>
+          <div className='btn btn-ghost normal-case text-lg'>随写</div>
+        </Link>
       </div>
     </div>
   )
