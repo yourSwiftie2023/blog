@@ -2,7 +2,7 @@
  * @Author: ccj
  * @Date: 2023-07-13 16:06:11
  * @LastEditors: ccj
- * @LastEditTime: 2023-07-13 18:04:22
+ * @LastEditTime: 2023-07-14 09:40:18
  * @Description: eslint 配置
  */
 module.exports = {
@@ -23,15 +23,11 @@ module.exports = {
   // 自定义 eslint 规则
   // 其中 "off" 或 0 表示关闭这个规则检查，"warn" 或 1 - 开启这个规则检查并提示（不影响退出状态）"error" 或 2 - 开启规则检查并报错
   rules: {
+    'import/prefer-default-export': 'off',
     'react/jsx-uses-react': 'off',
     'react/react-in-jsx-scope': 'off',
-    'global-require': 0,
-    'import/no-extraneous-dependencies': [
-      'error',
-      {
-        devDependencies: ['**/webpack.*.js'],
-      },
-    ],
+    'global-require': 'off',
+    'import/no-extraneous-dependencies': 'off',
     'react/jsx-filename-extension': ['error', { extensions: ['.js', '.jsx', 'ts', 'tsx'] }],
     'import/extensions': [
       'error',
@@ -48,6 +44,9 @@ module.exports = {
     'import/resolver': {
       node: {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+      webpack: {
+        config: './config/webpack.common.js',
       },
     },
   },
