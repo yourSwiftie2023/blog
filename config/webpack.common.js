@@ -39,6 +39,11 @@ module.exports = {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         include: [paths.appSrc],
         type: 'asset/resource',
+        parser: {
+          dataUrlCondition: {
+            maxSize: 6 * 1024,
+          },
+        },
       },
       {
         test: /.(woff|woff2|eot|ttf|otf)$/i,
